@@ -50,6 +50,15 @@ public class EmpleadosController : ControllerBase
         return Ok();
 
     }
+     [HttpDelete("{correoElectronico}")]
+    public IActionResult EliminarEmpleado(string correoElectronico)
+    {
+        _empleadosServicios.EliminarEmpleado(correoElectronico);
+
+
+        return Ok();
+
+    }
 }
 
 

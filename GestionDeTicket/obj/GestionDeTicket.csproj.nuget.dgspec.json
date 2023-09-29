@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\LENOVO\\Desktop\\API\\GestionDeTicket\\GestionDeTicket\\GestionDeTicket.csproj": {}
+    "C:\\Users\\LENOVO\\Desktop\\API\\GestionDeTicket\\GestionDeTicket\\GestionDeTicket.csproj": {}
   },
   "projects": {
-    "c:\\Users\\LENOVO\\Desktop\\API\\GestionDeTicket\\GestionDeTicket\\GestionDeTicket.csproj": {
+    "C:\\Users\\LENOVO\\Desktop\\API\\GestionDeTicket\\GestionDeTicket\\GestionDeTicket.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\LENOVO\\Desktop\\API\\GestionDeTicket\\GestionDeTicket\\GestionDeTicket.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\API\\GestionDeTicket\\GestionDeTicket\\GestionDeTicket.csproj",
         "projectName": "GestionDeTicket",
-        "projectPath": "c:\\Users\\LENOVO\\Desktop\\API\\GestionDeTicket\\GestionDeTicket\\GestionDeTicket.csproj",
+        "projectPath": "C:\\Users\\LENOVO\\Desktop\\API\\GestionDeTicket\\GestionDeTicket\\GestionDeTicket.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\LENOVO\\Desktop\\API\\GestionDeTicket\\GestionDeTicket\\obj\\",
+        "outputPath": "C:\\Users\\LENOVO\\Desktop\\API\\GestionDeTicket\\GestionDeTicket\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -24,10 +24,6 @@ public class EmpleadosRepositorio : IEmpleadosRepositorio
         
         return true;
     }
-    public bool EliminarEmpleados(Empleado empleado)
-    {
-        return true;
-    }
 
      public Empleado Obtener(string Correoelectronico)
      {
@@ -43,6 +39,19 @@ public class EmpleadosRepositorio : IEmpleadosRepositorio
         empleadoDB.Nombre = empleado.Nombre;
 
         _ticketAppContext.Update(empleadoDB);
+        _ticketAppContext.SaveChanges();
+
+        return true;
+     }
+       public bool EliminarEmpleado(string correoElectronico)
+     {
+        // Eliminar empleado en la base de datos
+        Empleado empleadoDB = _ticketAppContext
+            .Empleados
+            .Where( c => c.CorreoElectronico == correoElectronico  ).First();
+
+
+        _ticketAppContext.Remove(empleadoDB);
         _ticketAppContext.SaveChanges();
 
         return true;

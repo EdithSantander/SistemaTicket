@@ -7,7 +7,7 @@ public interface IEmpleadosRepositorio
 {
    
      bool AgregarEmpleados(Empleado empleados);
-     bool EliminarEmpleados(Empleado empleados);
+     bool EliminarEmpleado(string correoElectronico);
      bool ActualizarEmpleados(Empleado empleados);
      List<Empleado>ListarEmpleados();
      Empleado Obtener(string correoelectronico);

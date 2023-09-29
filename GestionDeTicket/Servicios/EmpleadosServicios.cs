@@ -33,9 +33,9 @@ public class EmpleadosServicios
         }
         return false;
     }
-     public bool EliminarEmpleados(Empleado empleado)
+     public bool EliminarEmpleado(string correoElectronico)
     {
-        return _empleadosRepositorio.EliminarEmpleados(empleado);
+        return _empleadosRepositorio.EliminarEmpleado(correoElectronico);
 
     }
      public List<Empleado> ListarEmpleados( )
