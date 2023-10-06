@@ -45,7 +45,14 @@ public class EmpleadosServicios
     }
     public Empleado GetObtener(string correoElectronico)
     {
-        return _empleadosRepositorio.Obtener(correoElectronico);
+        try
+        {
+            return _empleadosRepositorio.Obtener(correoElectronico);
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
     }
    
     

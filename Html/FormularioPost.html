@@ -1,0 +1,42 @@
+<html>
+<script>
+	function guardarDatos(event) {
+		const xhr = new XMLHttpRequest();
+		xhr.open("POST", "http://localhost:5293/api/Empleados");
+		xhr.setRequestHeader("content-type", "application/json; charset=UTF-8");
+		xhr.onload = () => {
+			if (xhr.status == 200) {
+				console.log("grabado");
+			} else {
+				console.log('Error: ' + xhr.status);
+			}
+		};
+
+		console.log( document.getElementById("TextoApellido").value);
+		console.log( document.getElementById("TextoNombre").value);
+		console.log( document.getElementById("TextoCorreo").value);
+		const body = JSON.stringify
+			({
+				"apellido": document.getElementById("TextoApellido").value,
+				"nombre": document.getElementById("TextoNombre").value,
+				"correoElectronico": document.getElementById("TextoCorreo").value
+			});
+
+		console.log(body);
+		xhr.send(body);
+		event.preventDefault();
+	}
+</script>
+
+<body>
+	<table>
+		<form>
+			Apellido: <input id="TextoApellido" /> <br />
+			Nombre:<input id="TextoNombre" /> <br />
+			CorreoElectronico: <input id="TextoCorreo" /> <br />
+			<button id="Guardar" onclick="guardarDatos(event)">Guardar</button>
+		</form>
+	</table>
+</body>
+
+</html>

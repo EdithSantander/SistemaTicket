@@ -1,0 +1,90 @@
+<html>
+
+<head>
+	<script>
+		function buscarClick(event) {
+			var correoElectronico = document.getElementById("correoElectronico").value;
+			const xhr = new XMLHttpRequest();
+			xhr.open("GET", "http://localhost:5293/api/Empleados/" + correoElectronico);
+			xhr.send();
+			xhr.responseType = "json";
+			xhr.onload = () => {
+				if (xhr.status == 200) {
+					var empleado = xhr.response
+
+					console.log(xhr.response);
+					document.getElementById("nombre").value = empleado.nombre;
+					document.getElementById("apellido").value = empleado.apellido;
+					document.getElementById("panelDatos").style = "display:visible";
+
+
+					//console.log("user ID"empleado.);
+				} else {
+					console.log('Error:' + xhr.status);
+				}
+			};
+
+			//event.preventDefault();
+		}
+		function grabarDatos(event) {
+			const xhr = new XMLHttpRequest();
+			xhr.open("PUT", "http://localhost:5293/api/Empleados");
+			xhr.setRequestHeader("content-type", "application/json; charset=UTF-8");
+			xhr.onload = () => {
+					if (xhr.status == 200) {
+						console.log("grabado");
+					} else {
+						console.log('Error: ' + xhr.status);
+					}
+				};
+			const body = JSON.stringify
+				({
+					"apellido": document.getElementById("apellido").value,
+					"nombre": document.getElementById("nombre").value,
+					"correoElectronico": document.getElementById("correoElectronico").value
+				});
+
+				console.log(body);
+			xhr.send(body);
+		}
+			function BorrarDatos(event){
+				var correoElectronico = document.getElementById("correoElectronico").value;
+			const xhr = new XMLHttpRequest();
+			xhr.open("DELETE", "http://localhost:5293/api/Empleados/" + correoElectronico);
+			xhr.send();
+			xhr.responseType = "json";
+			xhr.onload = () => {
+				if (xhr.status == 200) {
+					var empleado = xhr.response
+
+					console.log(xhr.response);
+					document.getElementById("nombre").value = empleado.nombre;
+					document.getElementById("apellido").value = empleado.apellido;
+					document.getElementById("panelDatos").style = "display:visible";
+
+
+					//console.log("user ID"empleado.);
+				} else {
+					console.log('Error:' + xhr.status);
+				}
+			}
+		}
+		
+	</script>
+</head>
+
+<body>
+	<label>Correo Electronico:</label>
+	<input id="correoElectronico">
+	<button id="Buscar" onclick="buscarClick()">Buscar</button>
+	<br>
+	<div id="panelDatos" style="display: visible;">
+		<label>Nombre : </label><input id="nombre" value="" />
+		<label>Apellido : </label><input id="apellido" value="" />
+
+		<button id="grabar" onclick="grabarDatos()">Grabar</button>
+		<button id="eliminar" onclick="BorrarDatos()">Borrar</button>
+
+</body>
+
+</html>
